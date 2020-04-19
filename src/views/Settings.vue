@@ -1,5 +1,5 @@
 <template lang="pug">
-.w-full.max-w-screen-xl.m-0.flex.flex-col.overflow-y-auto
+.w-full.m-0.flex.flex-col.overflow-y-auto
   .bg-blue-600.text-white.w-full.p-4.text-center.flex-grow-0.select-none
     .flex.justify-between.items-center
       .flex-1
