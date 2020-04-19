@@ -6,7 +6,8 @@ module.exports = {
       require("@fullhuman/postcss-purgecss")({
         content: ["./src/**/*.vue", "./public/index.html"],
         defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-        whitelist: ["spinner"]
+        whitelist: ["spinner"],
+        whitelistPatterns: [/flag-icon*/]
       })
   ]
 };
