@@ -3,7 +3,7 @@
     .bg-indigo-600.text-white.w-full.p-4.text-center.flex-grow-0.select-none
       .flex.justify-between.items-center
         .flex.content-center
-          p.text-xl.font-bold Lastest news from
+          p.font-light.text-xl Top headlines from
           span.flag-icon.ml-1(:class="this.countryFlag")
         button.bg-currrent.border-white.border.p-1.text-sm.rounded(class="hover:bg-indigo-700 focus:outline-none", @click="refresh")
           .flex.items-center.justify-center

@@ -21,14 +21,14 @@
                 p.text-lg.text-gray-900.font-sans.select-all Country
               .shrink-0.flex.ml-2
                 select.form-select(v-model='country', @change='onChange')
-                  option(value='us') United States
-                  option(value='gb') United Kingdom
+                  option(:value='c', v-for="c in countries") {{c}}
   .flex.grow-0.bg-gray-200.justify-center
     .text-xs.text-gray-500.select-none.p-2 Version {{version}}
 </template>
 
 <script>
 import Notification from "@/components/Notification.vue";
+import axios from "axios";
 
 export default {
   components: {
@@ -37,7 +37,8 @@ export default {
   data() {
     return {
       msg: null,
-      country: this.$store.getters.country
+      country: this.$store.getters.country,
+      countries: []
     };
   },
   methods: {
@@ -46,6 +47,10 @@ export default {
       this.$store.commit("setCountry", event.target.value);
       this.msg = "Saved changes";
     }
+  },
+  async mounted() {
+    const { data } = await axios.get(".netlify/functions/countries");
+    this.countries = data;
   },
   computed: {
     version() {

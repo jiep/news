@@ -2,10 +2,10 @@
   #app.h-screen.flex.flex-col.bg-gray-300
     #nav.h-24.p-4.bg-indigo-900.flex.items-center.justify-between.select-none
       .flex
-        p.text-white.text-3xl News
-        p.text-white
-          | Powered by
-          a.text-white(href="https://newsapi.org", target="_blank", class="hover:underline")  News API
+        p.text-white.font-bold.text-3xl News
+        p.font-hairline.text-white
+          | Powered by 
+          a.font-hairline.text-white(href="https://newsapi.org", target="_blank", class="hover:underline") News API
       router-link.text-xl.font-bold(:to="{ name: 'settings' }", v-if="!isSettingsRoute")
         .flex
           svg.w-5.text-white(role='img', xmlns='http://www.w3.org/2000/svg', viewBox='0 0 512 512')

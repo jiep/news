@@ -7,9 +7,6 @@ if(!API_KEY){
   console.log("API_KEY is not set!");
 }
 
-const ALLOWED_SITES = ["us", "gb"];
-
-
 exports.handler = async (event, context) => {
 
   if (event.httpMethod !== "POST") {
@@ -17,7 +14,7 @@ exports.handler = async (event, context) => {
   }
 
   const params = JSON.parse(event.body);
-  const country = params.country in ALLOWED_SITES ? params.country : ALLOWED_SITES[0];
+  const country = params.country;
 
   return axios.get(`${URL}?country=${country}&apiKey=${API_KEY}`, { headers: { "Accept": "application/json" } })
     .then(response => ({statusCode: 200, body: JSON.stringify(response.data.articles)}))
