@@ -1,5 +1,7 @@
 # News
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b08e0f6d-cf67-4bfb-8c6e-222662a2e335/deploy-status)](https://app.netlify.com/sites/upbeat-pare-19a219/deploys)
+
 ## Project setup
 ```
 npm install

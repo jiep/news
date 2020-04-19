@@ -5,15 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    limit: localStorage.getItem("limit") || 10
+    country: localStorage.getItem("country") || "us"
   },
   mutations: {
-    setLimit(state, limit) {
-      localStorage.setItem("limit", limit);
-      state.limit = limit;
+    setCountry(state, country) {
+      localStorage.setItem("country", country);
+      state.country = country;
     }
   },
   getters: {
-    limit: state => state.limit
+    country: state => state.country
   }
 });

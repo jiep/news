@@ -2,7 +2,9 @@
   .w-full.m-0.flex.flex-col.overflow-y-auto
     .bg-blue-600.text-white.w-full.p-4.text-center.flex-grow-0.select-none
       .flex.justify-between.items-center
-        p.text-xl.font-bold Last news
+        .flex.content-center
+          p.text-xl.font-bold Lastest news from
+          span.flag-icon.ml-1(:class="this.countryFlag")
         button.bg-currrent.border-white.border.p-1.text-sm.rounded(class="hover:bg-blue-700 focus:outline-none", @click="refresh")
           .flex.items-center.justify-center
             .flex
@@ -35,14 +37,20 @@ export default {
       type: "success"
     };
   },
+  computed: {
+    countryFlag() {
+      const { country } = this.$store.getters;
+      return `flag-icon-${country}`;
+    }
+  },
   methods: {
     async refresh() {
-      const { limit } = this.$store.getters;
+      const { country } = this.$store.getters;
       this.isError = false;
       try {
         this.isActive = true;
-        const { data } = await axios.get(".netlify/functions/news", {
-          limit
+        const { data } = await axios.post(".netlify/functions/news", {
+          country
         });
         this.news = data;
       } catch (e) {
@@ -55,9 +63,12 @@ export default {
     }
   },
   async mounted() {
+    const { country } = this.$store.getters;
     try {
       this.isActive = true;
-      const { data } = await axios.get(".netlify/functions/news");
+      const { data } = await axios.post(".netlify/functions/news", {
+        country
+      });
       this.news = data;
     } catch (e) {
       this.isError = true;

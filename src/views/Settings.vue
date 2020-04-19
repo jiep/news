@@ -18,13 +18,12 @@
           .flex.flex-col.flex-grow
             .flex.items-center.justify-between
               .shrink-0.flex
-                p.text-lg.text-gray-900.font-sans.select-all Max news
+                p.text-lg.text-gray-900.font-sans.select-all Country
               .shrink-0.flex.ml-2
-                select.form-select.bg-red-blue-700(v-model='limit', @change='onChange')
-                  option(value='10') 10
-                  option(value='15') 15
-                  option(value='30') 30
-                  option(value='50') 50
+                select.form-select.bg-red-blue-700(v-model='country', @change='onChange')
+                  option(value='us')
+                    | United States
+                  option(value='gb') United Kingdom
   .flex.grow-0.bg-gray-200.justify-center
     .text-xs.text-gray-500.select-none.p-2 Version {{version}}
 </template>
@@ -39,13 +38,13 @@ export default {
   data() {
     return {
       msg: null,
-      limit: this.$store.getters.limit
+      country: this.$store.getters.country
     };
   },
   methods: {
     onChange() {
       this.msg = null;
-      this.$store.commit("setLimit", +event.target.value);
+      this.$store.commit("setCountry", event.target.value);
       this.msg = "Saved changes";
     }
   },
