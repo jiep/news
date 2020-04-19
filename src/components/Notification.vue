@@ -12,7 +12,7 @@ export default {
       color: "bg-green-600",
       colors: [
         { type: "success", class: "bg-green-600" },
-        { type: "warning", class: "bg-orange-600" },
+        { type: "warning", class: "bg-indigo-600" },
         { type: "danger", class: "bg-red-600" }
       ]
     };

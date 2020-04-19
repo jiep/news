@@ -1,6 +1,6 @@
 <template lang="pug">
 .w-full.m-0.flex.flex-col.overflow-y-auto
-  .bg-blue-600.text-white.w-full.p-4.text-center.flex-grow-0.select-none
+  .bg-indigo-600.text-white.w-full.p-4.text-center.flex-grow-0.select-none
     .flex.justify-between.items-center
       .flex-1
         .flex
@@ -20,9 +20,8 @@
               .shrink-0.flex
                 p.text-lg.text-gray-900.font-sans.select-all Country
               .shrink-0.flex.ml-2
-                select.form-select.bg-red-blue-700(v-model='country', @change='onChange')
-                  option(value='us')
-                    | United States
+                select.form-select(v-model='country', @change='onChange')
+                  option(value='us') United States
                   option(value='gb') United Kingdom
   .flex.grow-0.bg-gray-200.justify-center
     .text-xs.text-gray-500.select-none.p-2 Version {{version}}

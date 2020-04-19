@@ -1,11 +1,11 @@
 <template lang="pug">
   .w-full.m-0.flex.flex-col.overflow-y-auto
-    .bg-blue-600.text-white.w-full.p-4.text-center.flex-grow-0.select-none
+    .bg-indigo-600.text-white.w-full.p-4.text-center.flex-grow-0.select-none
       .flex.justify-between.items-center
         .flex.content-center
           p.text-xl.font-bold Lastest news from
           span.flag-icon.ml-1(:class="this.countryFlag")
-        button.bg-currrent.border-white.border.p-1.text-sm.rounded(class="hover:bg-blue-700 focus:outline-none", @click="refresh")
+        button.bg-currrent.border-white.border.p-1.text-sm.rounded(class="hover:bg-indigo-700 focus:outline-none", @click="refresh")
           .flex.items-center.justify-center
             .flex
               svg.w-4.mr-1.text-white(role='img', xmlns='http://www.w3.org/2000/svg', viewBox='0 0 512 512')

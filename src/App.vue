@@ -1,6 +1,6 @@
 <template lang="pug">
   #app.h-screen.flex.flex-col.bg-gray-300
-    #nav.h-24.p-4.bg-blue-900.flex.items-center.justify-between.select-none
+    #nav.h-24.p-4.bg-indigo-900.flex.items-center.justify-between.select-none
       .flex
         p.text-white.text-3xl News
         p.text-white
