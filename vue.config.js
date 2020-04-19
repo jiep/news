@@ -17,7 +17,7 @@ module.exports = {
     workboxOptions: {
       exclude: [/\.map$/, /_redirects/],
     }
-  }
+  },
   configureWebpack: () => {
     return {
       plugins: [
