@@ -11,8 +11,8 @@ module.exports = {
   },
   productionSourceMap: false,
   pwa: {
-    themeColor: "#2a4365",
-    msTileColor: "#2a4365"
+    themeColor: "#3c366b",
+    msTileColor: "#3c366b"
   },
   configureWebpack: () => {
     return {
