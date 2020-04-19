@@ -1,5 +1,4 @@
 const { ALLOWED_COUNTRIES } = require("./allowed_countries.js");
-console.log(ALLOWED_COUNTRIES);
 
 exports.handler = async (event, context) => {
 
