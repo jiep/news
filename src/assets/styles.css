@@ -5,3 +5,7 @@
 .overscroll-contain {
   overscroll-behavior: contain;
 }
+
+.darker {
+  filter: brightness(50%);
+}
