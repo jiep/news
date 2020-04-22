@@ -12,7 +12,11 @@ module.exports = {
   productionSourceMap: false,
   pwa: {
     themeColor: "#3c366b",
-    msTileColor: "#3c366b"
+    msTileColor: "#3c366b",
+    workboxPluginMode: 'GenerateSW',
+    workboxOptions: {
+      exclude: [/\.map$/, /_redirects/],
+    }
   },
   configureWebpack: () => {
     return {
