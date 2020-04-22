@@ -14,8 +14,10 @@
               p Refresh
     notification(:msg="msg", :type="type", v-if="msg || (isError && msg)")
 
-    .container.mx-auto.px-4.h-full
-      news-list(:news="news", :class="{spinner: isActive, 'opacity-50': isActive}")
+    .h-full.overflow-y-auto
+      .container.mx-auto.px-4.h-full
+        news-list(:news="news", :class="{spinner: isActive, 'opacity-50': isActive}")
+
 </template>
 
 <script>
