@@ -13,7 +13,9 @@
             .flex
               p Refresh
     notification(:msg="msg", :type="type", v-if="msg || (isError && msg)")
-    news-list(:news="news", :class="{spinner: isActive, 'opacity-50': isActive}")
+
+    .container.mx-auto.px-4.h-full
+      news-list(:news="news", :class="{spinner: isActive, 'opacity-50': isActive}")
 </template>
 
 <script>

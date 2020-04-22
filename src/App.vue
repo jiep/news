@@ -1,5 +1,5 @@
 <template lang="pug">
-  #app.h-screen.flex.flex-col.bg-gray-300
+  #app.h-screen.flex.flex-col.bg-gray-100
     #nav.h-24.p-4.bg-indigo-900.flex.items-center.justify-between.select-none
       .flex
         p.text-white.font-bold.text-3xl News

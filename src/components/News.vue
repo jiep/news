@@ -9,12 +9,11 @@
             p.text-lg.text-white.font-sans.mb-4 {{news.title}}
             p.text-gray-300(v-if="news.author") {{news.author}}
 
+    .flex.p-8.justify-between.items-center(class='hover:bg-gray-200')
 
-    .flex.p-8.justify-between.items-center
+      p.text-gray-700.break-normal {{news.description}}
 
-      p.text-gray-700.break-all {{news.description}}
-
-      .flex.flex-shrink-0.items-center.m-4
+      .flex.flex-shrink-0.items-center.ml-8
         a(:href="news.url", target="_blank", rel="noopener noreferer")
           .flex.items-center
           svg.w-8.text-indigo-700(class="hover:text-indigo-800", role='img', xmlns='http://www.w3.org/2000/svg', viewBox='0 0 320 512')

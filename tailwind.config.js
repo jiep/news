@@ -10,7 +10,8 @@ module.exports = {
     })
   },
   variants: {
-    spinner: ["responsive"]
+    spinner: ["responsive"],
+    padding: ["responsive", "first", "last"]
   },
   plugins: [
     require("tailwindcss-spinner")(),
