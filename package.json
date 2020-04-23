@@ -1,6 +1,6 @@
 {
   "name": "news",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "scripts": {
     "serve": "./node_modules/netlify-lambda/bin/cmd.js serve src-functions & vue-cli-service serve",
     "build": "./node_modules/netlify-lambda/bin/cmd.js build src-functions && vue-cli-service build",
