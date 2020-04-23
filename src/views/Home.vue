@@ -14,10 +14,10 @@
               p Refresh
     notification(:msg="msg", :type="type", v-if="msg || (isError && msg)")
 
-    .h-full.overflow-y-auto
-      .container.mx-auto.px-4.h-full
-        news-list(:news="news", :class="{spinner: isActive, 'opacity-50': isActive}")
-
+    .h-full.overflow-y-auto(:class="{spinner: isActive, 'opacity-50': isActive}")
+      .container.mx-auto.flex-grow.flex.flex-col(:class="{'h-full': isLoading}")
+        news-list.px-4(:news="news")
+        Footer(author="jiep", github="https://github.com/jiep")
 </template>
 
 <script>
@@ -25,12 +25,14 @@ import axios from "axios";
 
 import Notification from "@/components/Notification.vue";
 import NewsList from "@/components/NewsList.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "home",
   components: {
     Notification,
-    NewsList
+    NewsList,
+    Footer
   },
   data() {
     return {
@@ -38,7 +40,8 @@ export default {
       isActive: false,
       msg: "",
       isError: false,
-      type: "success"
+      type: "success",
+      isLoading: true
     };
   },
   computed: {
@@ -63,6 +66,7 @@ export default {
         this.type = "danger";
       } finally {
         this.isActive = false;
+        this.isLoading = false;
       }
     }
   },
@@ -80,6 +84,7 @@ export default {
       this.type = "danger";
     } finally {
       this.isActive = false;
+      this.isLoading = false;
     }
   }
 };
